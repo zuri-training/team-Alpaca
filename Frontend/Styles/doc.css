@@ -1,0 +1,225 @@
+html,
+body{
+    color:black;
+    background-color: white;
+    font-family: montserrat, calibri, sans-serif;
+    line-height:2.0;
+}
+
+header{
+    display:flex;
+    flex-direction: column;
+    font-size:1.8em;
+   
+}
+
+
+#logo{
+    position:fixed;
+    display: flex;
+    align-items: center;
+    width: 230px;
+    height: 52px;
+    left: 120px;
+    top: 64px;
+    color: #1D299E;
+}
+
+#navbar{
+    position:fixed;
+    top:200px;
+    left:121px;
+    height: 276px;
+    width: 224px;
+    border-radius: 8px;
+    background: hsl(29, 48%, 61%);
+    padding: 16px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    font-weight: 700;
+}
+
+
+#navbar li{
+    color:white;
+    list-style:none;
+    font-size:12px;
+    position:relative;
+}
+
+#navbar a{
+    display:block;
+    padding: 10px 30px;
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+#navbar a:hover{
+    display:block;
+    padding: 10px 30px;
+    color:black;
+    background-color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+
+#title{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    color: #1D299E;
+}
+
+#main-doc{
+    position:absolute;
+    top: 184px;
+    margin-left: 460px;
+    padding-right: 121px;
+    text-align: justify;
+    
+}
+
+section article{
+    color:black;
+    font-size:0.96em;
+}
+
+code{
+    display:block;
+    text-align:center;
+    white-space: pre-line;
+    position:relative;
+    word-break: normal;
+    word-wrap:normal;
+    line-height:2;
+    color: #ffffff;
+    background-color:#000000;
+    padding:60px;
+    margin:10px;
+    border-radius:5px;
+}
+
+
+/*-------FOOTER SECTION----------*/
+
+#footer {
+    margin-top: 60px;
+    padding-top:40px;
+    padding-bottom: 20px;
+    background-color: #1D299E;
+    color:#FFFFFF;
+    font-size: 12px;
+    
+}
+
+#footer li{
+    list-style: none;
+}
+
+#footer #top{
+    display:flex;
+    flex-wrap: wrap;
+    line-height: 2rem;
+}
+
+#footer #bottom{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    border-top: 1px solid white;
+}
+
+#footer #bottom li{
+    display: block;
+    float: left;
+    padding-right: 20px;
+
+}
+
+#footer #bottom p{
+    padding-right: 20px;
+}
+
+
+#logo-about-form{
+    padding: 20px;
+    line-height: 1rem;
+    display:flex;
+    flex-direction: column;
+}
+
+#footer button{
+    padding: 3px;
+    background-color: #CB9A6B;
+    color:#FFFFFF;
+}
+
+#footer button:hover{
+    cursor: pointer;
+}
+
+#footer #footer-logo{
+    display: flex;
+    align-items: center;
+    width: 230px;
+    height: 52px;
+    font-size: 1.8em;
+    color: #ffffff;
+}
+
+/*----------MEDIA RESPONSIVENESS--------------*/
+/*for Tablets and Mobbile Phones */
+
+@media only screen and (max-width:815px){
+  
+
+    body{
+        margin: 20px;
+    }
+
+    #logo{
+        position:relative;
+        display: flex;
+        align-items: center;
+        width: 230px;
+        height: 24px;
+        left: 20px;
+    }
+    
+    #navbar{
+        background-color: #CB9A6B;
+        position:relative;
+        width: 80%;
+        top: 100px;
+        left:0px;
+        padding:16px;
+        border:none;
+    }
+    
+    #main-doc{
+        top:75px;
+        position: relative;
+        display:block;
+        margin:auto;
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width:400px){
+
+    #main-doc{
+        margin-top: 27px;
+    }
+
+    code{
+        margin-left:-20px;
+        width:100%;
+        padding:15px;
+        padding-left:10px;
+        padding-right: 45px;
+        min-width:233px;
+    }
+}
