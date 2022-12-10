@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const controller = require("../controller/commentController");
+const controller = require("../controllers/commentController");
 
 router
   .get("/", controller.getAllComments)
-  .get("/:id", controller.getComment) //might not be needed
+  .get("/:id", controller.getComment)
   .post("/", controller.createComment)
   .put("/:id", controller.updateComment)
   .delete("/:id", controller.deleteComment);

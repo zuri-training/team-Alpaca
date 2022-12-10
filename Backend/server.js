@@ -1,7 +1,7 @@
 const express = require("express");
 const { json } = require("express");
 const connect = require("./config/database");
-const taskRoute = require("./router/commentRoute");
+const taskRoute = require("./routes/commentRoute");
 
 connect();
 

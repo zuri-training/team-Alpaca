@@ -25,28 +25,28 @@ exports.getAllComments = async (req, res) => {
 };
 
 // get single comment
-// exports.getTask = async (req, res) => {
-//   try {
-//     let id = { _id: req.params.id };
-//     let comment = await Comment.findOne({ _id: id });
-//     if (!task)
-//       return res.status(404).json({
-//         success: false,
-//         message: "Task not found",
-//       });
-//     res.status(200).json({
-//       success: true,
-//       message: "Task found",
-//       comment,
-//     });
-//   } catch (error) {
-//     res.status(500).json({
-//       success: false,
-//       message: "Internal Server Error",
-//       error: error.message,
-//     });
-//   }
-// };
+exports.getTask = async (req, res) => {
+  try {
+    let id = { _id: req.params.id };
+    let comment = await Comment.findOne({ _id: id });
+    if (!task)
+      return res.status(404).json({
+        success: false,
+        message: "Comment not found",
+      });
+    res.status(200).json({
+      success: true,
+      message: "Comment found",
+      comment,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: error.message,
+    });
+  }
+};
 
 // Create comment
 exports.createComment = async (req, res) => {
@@ -101,7 +101,7 @@ exports.updateComment = async (req, res) => {
 exports.deleteComment = async (req, res) => {
   try {
     let id = { _id: req.params.id };
-    let deleted = await Task.findOneAndRemove(id);
+    let deleted = await Comment.findOneAndRemove(id);
     if (!deleted)
       return res.status(400).json({
         success: false,

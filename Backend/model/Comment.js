@@ -2,12 +2,6 @@ const { Schema, model } = require("mongoose");
 
 const commentSchema = new Schema(
   {
-    title: {
-      type: String,
-      required: true,
-      minlength: 3,
-      maxlength: 15,
-    },
     description: {
       type: String,
       required: true,
@@ -23,6 +17,6 @@ const commentSchema = new Schema(
   { timestamps: true }
 );
 
-const taskModel = model("comments", commentSchema);
+const commentModel = model("comments", commentSchema);
 
-module.exports = taskModel;
+module.exports = commentModel;
