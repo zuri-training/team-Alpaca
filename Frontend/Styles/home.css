@@ -42,10 +42,10 @@ nav .container {
 
     /* auth-wiki-logo 2 */
 
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
 
-    background: url(../images/auth-wiki-logo\ 2.png);
+    /* background: url(../images/auth-wiki-logo\ 2.png); */
 
     /* Inside auto layout */
     flex: none;
@@ -193,10 +193,11 @@ footer {
 
 footer ul {
     list-style: none;
+    padding: 10px;
 }
 
 footer ul li {
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 footer a {
@@ -269,6 +270,7 @@ input[type='email'] {
 
     nav button {
         border: none;
+        color: #563515;
     }
 
     nav button#close-menu-btn {
@@ -319,6 +321,7 @@ input[type='email'] {
 
     .links li a {
         background: #0000ff;
+        color: #fff;
         box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
         width: 100%;
         height: 100%;
@@ -353,5 +356,55 @@ input[type='email'] {
 
     .reasons .container h3 {
         margin: auto;
+    }
+
+    /* ============== Footer ========== */
+
+    .top {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .newsletter p {
+        padding-bottom: 20px;
+
+    }
+
+    .banner {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    nav .logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    nav .logo_text {
+        font-size: 20px;
+    }
+
+    .top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
+    }
+
+    .copyright {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .copyright p {
+        margin-top: 20px;
+    }
+
+    .banner {
+        justify-content: flex-start;
     }
 }
