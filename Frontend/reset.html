@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Your Password</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+
+    <style>
+        .body{
+            font-family: "Roboto", sans-serif;
+        }
+        .container{
+            box-shadow: 0px 0px 8px #ddd
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container p-4 mt-5" style="max-width:500px">
+        <h4 class="text-center mb-4">RESET YOUR PASSWORD</h4>
+        <form method="post" action="/reset" style="max-width:500px;">
+            <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="example@test.com">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Send Reset Link</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
