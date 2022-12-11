@@ -1,4 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Manrope';
+}
+
+.container {
+    margin: 60px;
+}
+
+nav .container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    margin-left: auto;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.75em;
+}
+
+.links a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+
+}
+
+.logo {
+
+    /* auth-wiki-logo 2 */
+
+    width: 36px;
+    height: 36px;
+
+    background: url(../images/auth-wiki-logo\ 2.png);
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.logo_text {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    color: #1D299E;
+}
+
+.logo_text a {
+    text-decoration: none;
+}
+
+.user {
+    font-size: 28px;
+    display: block;
+    margin-left: 1.75rem;
+}
+
+nav {
+    margin-bottom: 75px;
+}
+
+nav button {
+    display: none;
+}
+
+
+main .container {
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0;
+}
+
+.left__div h2 {
+    color: #1D299E;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 45px;
+}
+
+.left__div p {
+    margin-bottom: 80px;
+}
+
+.btn {
+
+    display: inline-block;
+    margin-top: 20px;
+    background: #CB9A6B;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+
+}
+
+.right__div img {
+    position: relative;
+    width: 308px;
+    height: 251px;
+    left: 30%;
+}
+
+.actions .container h2 {
+    color: #1D299E;
+    font-size: 24px;
+    padding-left: 25%;
+    padding-right: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.icons {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    width: 100%;
+    padding: 2rem;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions {
+    top: 0;
+}
+
+.icon em,
+.icon h4,
+.icon p {
+    margin: 10px;
+}
+
+.btn:hover {
+    opacity: 80%;
+}
+
+.icon .uil,
+.icon .fa-solid {
+    font-size: 60px;
+    color: rgb(180, 83, 83);
+    margin-top: 15px;
+}
+
+
+.actions .container .btn {
+    margin-left: 40%;
+}
+
+.reasons .container h3 {
+    color: #1D299E;
+    font-size: 24px;
+    margin: 20px 30%;
+}
+
+.items li h4 {
+    margin: 15px;
+}
+
+.items li {
+    color: #1D299E;
+    margin: 15px;
+    margin-bottom: 30px;
+}
+
+.items li p {
+    color: #000;
+    line-height: 1.7rem;
+}
+
+footer {
+    background: #1D299E;
+    color: #fff;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-top: 5px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer .container {
+    padding-top: 40px;
+    margin-bottom: 0;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.banner {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 45px;
+    gap: 4px;
+}
+
+input {
+    height: 35px;
+    border: 1px solid #FBFBFB;
+    background: #FBFBFB;
+    border-radius: 8px;
+    width: 70%;
+    margin-right: 5px;
+}
+
+input[type='email'] {
+    padding-left: 15px;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    padding-bottom: 40px;
+
+}
+
+.copyright ul {
+    display: flex;
+    gap: 100px;
+}
+
+.copyright p {
+    margin-left: auto;
+
+}
+
+.container.bottom {
+    margin-top: 0;
+}
+
+@media (max-width: 875px) {
+
+    /* ============ Nav bar =============== */
+    nav button {
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    nav button {
+        border: none;
+    }
+
+    nav button#close-menu-btn {
+        display: none;
+    }
+
+    .links {
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+    }
+
+    .links li {
+        width: 100%;
+        height: 5.8rem;
+        animation: animateNavItems 400ms linear forwards;
+        transform-origin: top right;
+        opacity: 0;
+    }
+
+    .menu li:nth-child(2) {
+        animation-delay: 200ms;
+    }
+
+    .menu li:nth-child(3) {
+        animation-delay: 400ms;
+    }
+
+    .menu li:nth-child(4) {
+        animation-delay: 600ms;
+    }
+
+    @keyframes animateNavItems {
+        0% {
+            transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+        }
+
+        100% {
+            transform: rotateZ(0) rotateX(0) scale(1);
+            opacity: 1;
+        }
+    }
+
+    .links li a {
+        background: #0000ff;
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .links li a:hover {
+        background: #CB9A6B;
+        color: #fff;
+    }
+
+    /* ============ End nav bar ============ */
+
+    main .container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .actions .container h2 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .right__div img {
+        left: auto;
+    }
+
+    .icons {
+        flex-basis: 50%;
+    }
+
+    .reasons .container h3 {
+        margin: auto;
+    }
 }
