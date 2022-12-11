@@ -1,22 +1,26 @@
-const { Schema, model } = require("mongoose");
+const {
+    Schema,
+    model
+} = require("mongoose");
 
-const commentSchema = new Schema(
-  {
+const commentSchema = new Schema({
     description: {
-      type: String,
-      required: true,
-      unique: false,
-      minlength: 3,
-      maxlength: 50,
+        type: String,
+        required: true,
+        unique: false,
+        minlength: 3,
+        maxlength: 50,
     },
     priority: {
-      type: String,
-      default: null,
+        type: String,
+        default: null,
     },
-  },
-  { timestamps: true }
-);
+}, {
+    timestamps: true
+});
 
 const commentModel = model("comments", commentSchema);
 
-module.exports = commentModel;
+module.exports = {
+    commentModel
+};
