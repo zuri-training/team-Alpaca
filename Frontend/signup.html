@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/style.css" />
+    <link rel="stylesheet" href="./fontawesome-free-5.12.1-web/css/all.css" />
+    <title>Auth-wiki sign up</title>
+  </head>
+  <body>
+    <section class="section login">
+      <div class="section-center login-ses">
+        <h1>Auth-wiki</h1>
+        <h2>Create your free account</h2>
+
+        <form action="">
+          <div class="input-details">
+            <label for="">Full name</label> <br />
+            <input type="text" name="" placeholder="Enter full name" id="" />
+            <br />
+            <label for="">Username</label> <br />
+            <input type="text" name="" placeholder="Enter username" id="" />
+            <br />
+            <label for=""> Email</label> <br />
+            <input
+              type="email"
+              name=""
+              placeholder="Enter username or email"
+              id="email"
+            />
+            <h5 id="email-msg"></h5>
+            <br />
+            <label for="">Password</label> <br />
+            <input
+              type="password"
+              name=""
+              placeholder="Enter Password"
+              id="Password"
+              required
+            />
+
+            <h5 id="pass-msg"></h5>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="checkbox" />
+            <label for="">Remember Password</label>
+          </div>
+          <button id="creat-account" type="submit">Create account</button>
+        </form>
+        <div class="underline">
+          <p>continue with</p>
+        </div>
+        <div class="login-icon">
+          <span
+            ><a href=""><img src="./images/google.svg" alt="" /></a
+          ></span>
+          <span
+            ><a href=""><img src="./images/git.svg" alt="" /></a
+          ></span>
+        </div>
+
+        <p>Already have an account? <a href="./login.html">Sign in</a></p>
+      </div>
+    </section>
+
+    <script src="./scripts/signup.js"></script>
+  </body>
+</html>
