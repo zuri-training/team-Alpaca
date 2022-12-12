@@ -5,9 +5,18 @@ const crypto = require('crypto')
 
 //create schema
 const userSchema = new mongoose.Schema({
-    username : String,
-    email : String,
-    password : String
+    username : {
+        type: String,
+        required: true
+    },
+    email : {
+        type: String,
+        required: true
+    },
+    password : {
+        type: String,
+        required: true
+    }
 })
 
 //generate password reset hash
@@ -24,6 +33,6 @@ userSchema.methods.verifyPasswordResetHash = function(resetHash = undefined){
     return this.passwordResetHash() === resetHash;
 }
 
-//our model
+// model
 const User = mongoose.model('User', userSchema)
 module.exports = User;

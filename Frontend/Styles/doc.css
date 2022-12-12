@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap');
+
 html,
 body{
     color:black;
     background-color: white;
-    font-family: montserrat, calibri, sans-serif;
+    font-family: manrope, montserrat, calibri, sans-serif;
     line-height:2.0;
 }
 
@@ -13,16 +15,18 @@ header{
    
 }
 
-
 #logo{
     position:fixed;
     display: flex;
     align-items: center;
-    width: 230px;
-    height: 52px;
     left: 120px;
     top: 64px;
     color: #1D299E;
+}
+
+#logo img{
+    width: 40px;
+    height:auto;
 }
 
 #navbar{
@@ -66,7 +70,6 @@ header{
 
 
 #title{
-    font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
     font-size: 26px;
@@ -168,6 +171,11 @@ code{
     height: 52px;
     font-size: 1.8em;
     color: #ffffff;
+}
+
+#footer-logo img{
+    width: 40px;
+    height:auto;
 }
 
 /*----------MEDIA RESPONSIVENESS--------------*/
