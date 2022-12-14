@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-5.12.1-web/css/all.css
+    "
+    />
+    <title>Auth-wiki</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="header-logo">
+          <img src="./images/auth-wiki-logo 2.png" class="logo" alt="" />
+          <h1>Auth-wiki</h1>
+        </div>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./doc.html">Docs</a></li>
+            <li><a href="./library.html">Library</a></li>
+            <li><a href="./login.html">Login</a></li>
+            <li id="active"><a href="./signup.html">Get Started > </a></li>
+          </ul>
+        </nav>
+        <span class="menu-bar"><i class="fas fa-bars"></i></span>
+      </div>
+      <span><i class="fas fa-times"></i></span>
+    </header>
+
+    <!-----------firebase section starts    ------------->
+    <section class="firebase section">
+      <div class="section-center firebase-sec download">
+        <h2>Firebase Auth. (Javascripy)</h2>
+        <textarea name="" id="" cols="30" rows="10">
+         const likeBtn = document.querySelectorAll(".fa-thumbs-up");
+const download = document.querySelectorAll(".fa-cloud");
+const footerDate = document.getElementById("curent-date");
+const selectCourse = document.querySelectorAll("#view-course");
+const navLink = document.querySelector(".nav-list");
+let numLikes = document.querySelectorAll("#num-likes");
+const navBar = document.querySelector(".menu-bar");
+const header = document.querySelector(".header");
+const navCancle = document.querySelector(".fa-times");
+let colorInterTurn = true;
+let addNum = 0;
+let interactColor;
+let colorLike = "blue";
+
+let add = true;
+
+const seen = document.querySelectorAll(".fa-eye");
+
+//date
+let currentdate = new Date().getFullYear();
+
+footerDate.textContent = currentdate;
+
+///////////////////////////////  like  number
+
+///////////////////////////////  like bnt
+
+likeBtn.forEach((like, likeI) => {
+  like.addEventListener("click", (e) => {
+    e.preventDefault();
+    const clickbtn = e.target;
+
+    if (like === clickbtn && colorInterTurn === true) {
+      interactColor = like.style.color = colorLike;
+      colorInterTurn = false;
+      addNum++;
+      numLikes.forEach(function (num, i) {
+        if (likeI === i) {
+          num.textContent = `${addNum} likes`;
+        }
+      });
+    } else {
+      like.style.color = "#853030";
+
+      addNum--;
+      colorInterTurn = true;
+      numLikes.forEach(function (num, i) {
+        if (likeI === i) {
+          num.textContent = `${addNum} likes`;
+        }
+      });
+    }
+    // numLikes.forEach((num) => {
+    //   if (num) {
+    //     num.textContent = `${addNum} likes`;
+    //   }
+    // });
+  });
+});
+        </textarea>
+      </div>
+    </section>
+    <!-----------firebase section end    ------------->
+    <!-----------overview section starts   ------------->
+    <section class="over-view section">
+      <div class="over-view-sec section-center download">
+        <h2>Overview</h2>
+        <p>
+          Firebase is an authentication service that allows you to easily
+          authenticate users. It provides support for email/password, phone
+          number, <br />
+          Google, Facebook sign-in amongst others. This library will help get
+          you started with registering users on your React project.
+        </p>
+        <h2>Package/dependencies:</h2>
+        <p>
+          React: This library enables you to set up sign-in authentication on
+          your React app. Ensure you have npm installed on your workstation,
+          then set <br />
+          up a new project by running ‘npx create-react-app &#60;APP_NAME&#62;’
+        </p>
+
+        <p>
+          Firebase Module: After setting up your React project, you’d need to
+          install the Firebase Module in order to use the packages included
+          therein. <br />
+          You can do this by running ‘npm install firebase’’’’
+        </p>
+      </div>
+    </section>
+
+    <section class="code-snippets section">
+      <div class="code-snippets-sec section-center download">
+        <h2>Code snippets:</h2>
+        <div class="code-area">
+          <textarea
+            class="code-snippet-area"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          >const express = require("express");
+const {
+    json
+} = require("express");
+const cors = require("cors");
+const bodyParser = require('body-parser');
+const multer = require('multer');
+const morgan = require('morgan');
+
+//import express session
+const session = require("express-session");
+
+const connect = require("./Config/database");
+const commentRoute = require("./Routes/commentRoute");
+
+const templateRoute = require("./Routes/templateRoutes");
+const passwordResetRouter = require("./Routes/passwordResetRoute");
+
+connect();
+
+const PORT = process.env.PORT || 3100;
+
+const app = express();
+app.use(morgan('dev'))
+app.use(cors);
+app.use(json());
+app.use("/comments", commentRoute);
+
+app.use("/templates", templateRoute);
+
+app.use("/reset", passwordResetRouter);
+app.use("/reset-pass", passwordResetRouter);
+
+//parse url encoded bodies
+app.use(express.urlencoded({
+    extended: true
+}));
+
+//register session in express
+app.use(
+    session({
+        secret: "PasswordResetNodeJs",
+        resave: true,
+        saveUninitialized: true,
+    })
+);
+
+app.get("/", (req, res) => {
+    res.send("Mongo server on DB");
+});
+
+app.listen(PORT, () => console.log(`Serving on port ${PORT}`));</textarea>
+        </div>
+      </div>
+    </section>
+    <!-----------overview section end    ------------->
+    <!-----------Example section start    ------------->
+
+    <section class="section example">
+      <div class="example-sec section-center download">
+        <h2>Example</h2>
+
+        <p>
+          Time is precious as a developer, and we want you to get started
+          building that next idea FAST! To get started using the library:
+        </p>
+        <ol>
+          <li>Head over to the Firebase console and click Create a project.</li>
+          <li>
+            Give your project a name and click create to start the process.
+          </li>
+          <li>
+            Click on the Web icon (&#60;/&#62;) on your project’s overview page
+            to register the app.
+          </li>
+          <li>
+            Give your app a name of your choice and click Register app. You
+            don’t need to enable Firebase Hosting.
+          </li>
+          <li>Copy the configuration object under “Add Firebase SDK”.</li>
+          <li>
+            Head over to the authentication tab and enable ‘Email/password’
+            authentication.
+          </li>
+        </ol>
+        <p>
+          After that is done, create a ‘.env’ to store the configuration
+          information for your project. Your key should match what’s after the
+          ‘REACT_APP_’ <br />
+          in the initializing App object and the value can be obtained from the
+          configuration object retrieved in the previous step.
+        </p>
+      </div>
+    </section>
+
+    <section class="section apikey">
+      <div class="section-center apikey-sec">
+        <div class="api-key-box">
+          <p>API_KEY*sup3RDup3Rs38$//cur3k3y</p>
+        </div>
+      </div>
+    </section>
+    <!-----------Example section end    ------------->
+    <section class="note">
+      <div class="section-center note-sec download">
+        <div class="note">
+          <p>
+            Voila! All that remains is to hook up your library with your input
+            field. Happy coding!
+          </p>
+          <h4>
+            Note: You can choose to do away with the REACT_APP prefix if you
+            have the “dotenv” package installed and initialized
+          </h4>
+        </div>
+        <div class="download-icon">
+          <button class="dowload-page-btn">
+            <a href="">Downlaod <i class="fas fa-cloud"></i></a>
+          </button>
+          <button class="dowload-page-btn">
+            <a href=""><i class="fas fa-thumbs-up"></i></a>
+          </button>
+          <span class="count">11.5k</span>
+
+          <button class="dowload-page-btn">
+            <a href=""><i class="fas fa-eye"></i></a>
+          </button>
+          <span class="count">1.5k</span>
+        </div>
+      </div>
+    </section>
+
+    <!----------- pic language section start   ------------->
+    <section class="section course">
+      <div class="section-title">
+        <h2>Suggested Download</h2>
+      </div>
+      <div class="section-center courses">
+        <!-- select-cours start -->
+        <article class="select-course">
+          <a href="#" id="view-course">
+            <img src="./images/css10 logo.png" alt="" />
+          </a>
+          <div class="course-info">
+            <p>Seamless Reactjs Login Template</p>
+            <div class="icon-rection">
+              <!-- rection icones -->
+              <div class="icon-rect">
+                <span><i class="fas fa-eye"></i></span>
+                <span> 1.2m views</span>
+              </div>
+              <div class="icon-rect">
+                <span> <i class="fas fa-thumbs-up"></i></span>
+
+                <span id="num-likes">0 likes</span>
+              </div>
+              <div class="icon-rect">
+                <span> <i class="fas fa-cloud"></i></span>
+
+                <span> 1m </span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- select-cours end -->
+        <!-- select-cours start -->
+        <article class="select-course">
+          <a href="#" id="view-course">
+            <img src="./images/python logo.png" alt="" />
+          </a>
+          <div class="course-info">
+            <p>Seamless Reactjs Login Template</p>
+            <div class="icon-rection">
+              <!-- rection icones -->
+              <div class="icon-rect">
+                <span><i class="fas fa-eye"></i></span>
+                <span> 1.2m views</span>
+              </div>
+              <div class="icon-rect">
+                <span> <i class="fas fa-thumbs-up"></i></span>
+
+                <span id="num-likes">0 likes</span>
+              </div>
+              <div class="icon-rect">
+                <span> <i class="fas fa-cloud"></i></span>
+
+                <span> 1m </span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- select-cours end -->
+        <!-- select-cours start -->
+        <article class="select-course">
+          <a href="#" id="view-course">
+            <img src="./images/php logo.png" alt="" />
+          </a>
+          <div class="course-info">
+            <p>Seamless Reactjs Login Template</p>
+            <div class="icon-rection">
+              <!-- rection icones -->
+              <div class="icon-rect">
+                <span><i class="fas fa-eye"></i></span>
+                <span> 1.2m views</span>
+              </div>
+              <div class="icon-rect">
+                <span> <i class="fas fa-thumbs-up"></i></span>
+
+                <span id="num-likes">0 likes</span>
+              </div>
+              <div class="icon-rect">
+                <span> <i class="fas fa-cloud"></i></span>
+
+                <span> 1m </span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- select-cours end -->
+      </div>
+      <div class="btn-center">
+        <button class="btn">
+          <a href="#"> Explore Library</a>
+        </button>
+      </div>
+    </section>
+    <!----------- pic language section end    ------------->
+    <!----------- leave  a comment starts   ------------->
+
+    <section class="comment-sec section">
+      <div class="comment section-center download">
+        <h2>LEAVE A COMMENT</h2>
+        <div class="user-com-img">
+          <img src="./images/unsplash_WMD64tMfc4k.png" alt="" />
+          <p>
+            Your email address will not be published. Required fields are marked
+            *
+          </p>
+        </div>
+        <form action="">
+          <input class="comment-input" type="text" /> <br />
+          <button class="btn" type="submit">Post Comment</button>
+        </form>
+      </div>
+    </section>
+    <!----------- leave  a comment ends   ------------->
+    <!----------- previouse  comment starts   ------------->
+    <sectino class="section pre-sec">
+      <div class="pre section-center">
+       <h2>PREVIOUS COMMENTS</h2>
+       <div class="pre-gri">
+
+        <article class="pre-photo">
+          <img src="./images/unsplash_iFgRcqHznqg.png" alt="" />
+        </article>
+        <!-- img end -->
+        <article class="pre-info">
+          <span>Austing Coker <p>07 Dec 2022 11:03am</p></span>
+          <p>
+            I’ve really enjoyed using the authentication codes from this
+            website. Its makes my learning experience in <br> coding much easier.
+          </p>
+          <div class="reply">
+          <a href="#">Reply</a>
+          <span>32 <i class="fas fa-thumbs-up"></i></span>
+          </div>
+        </article>
+       
+      </div>
+      <div class="pre-gri">
+        <!-- info end  -->
+        <article class="pre-photo">
+          <img src="./images/unsplash_3TLl_97HNJo.png" alt="" />
+        </article>
+        <!-- img end -->
+        <article class="pre-info">
+          <span>Austing Coker <p>07 Dec 2022 11:03am</p></span>
+          <p>
+            I’ve really enjoyed using the authentication codes from this
+            website. Its makes my learning experience in <br> coding much easier.
+          </p>
+           <div class="reply">
+          <a href="#">Reply</a>
+          <span>32 <i class="fas fa-thumbs-up"></i></span>
+          </div>
+        </article>
+        <!-- info end  -->
+      </div>
+    </sectino>
+       </div>
+    <!----------- previouse  comment ends   ------------->
+
+    <!----------- footer  section starts   ------------->
+
+    <footer class="section footer">
+      <div class="section-center footer-sec">
+        <article class="footer-list">
+          <ul>
+            <li><a href="#">Campany</a></li>
+            <li><a href="#">Document</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Contect</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">MSAL (Javascript)</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Tearm of use </a></li>
+            <li><a href="#">React auths</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+          <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#">Python auths</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </article>
+        <!-- footer list end -->
+        <article class="footer-submit">
+          <div class="footer-txt">
+            <img src="./images/auth-wiki-logo 2.png" class="logo" alt="" />
+            <h1>Auth-wiki</h1>
+          </div>
+          <p>
+            Get the latest update on our new <br />
+            features and library updates
+          </p>
+          <form action="">
+            <input type="email" placeholder="Enter e-mail address" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </article>
+      </div>
+      <div class="under-line"></div>
+      <div class="section-center footer-line">
+        <div class="privacy">
+          <p>Privacy policy</p>
+          <p>Site-Map</p>
+        </div>
+        <div class="date">
+          <p>
+            &#169; <span id="curent-date"> </span> Auth-wiki. All rights
+            reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!----------- footer  section end    ------------->
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>

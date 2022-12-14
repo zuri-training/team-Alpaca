@@ -18,6 +18,7 @@
   --colrh-visit: #959ef6;
   --question-back: #dceafe;
   --gray-color-2: rgba(223, 223, 223, 0.344);
+  --textrea-backg-color: #2f2f2f;
 }
 
 body {
@@ -64,7 +65,10 @@ p,
 a {
   margin: 1rem 0;
 }
-
+h2 {
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
 img {
   /* display: block; */
   max-width: 100%;
@@ -372,7 +376,7 @@ course
 .course .courses {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+
   justify-content: space-between;
   align-items: center;
   text-align: center;
@@ -1102,4 +1106,189 @@ h3 {
 }
 .about {
   padding-left: 5rem;
+}
+
+/* 
+===============
+download page
+===============
+*/
+
+.firebase-sec {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.firebase-sec h2 {
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.firebase-sec textarea {
+  background-color: var(--textrea-backg-color);
+  color: white;
+  font-weight: 300;
+  width: 50em;
+  height: 30em;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+}
+.code-area {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.code-snippet-area {
+  background-color: var(--textrea-backg-color);
+  color: white;
+  font-weight: 300;
+  width: 50em;
+  height: 40em;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+}
+.download {
+  padding: 0 5rem;
+}
+
+.example-sec ol {
+  margin-left: 3rem;
+}
+.example-sec ol li {
+  color: var(--gray-color);
+}
+.apikey-sec {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.api-key-box {
+  width: 50vw;
+  height: 5vh;
+  background-color: var(--darck-blue);
+}
+.api-key-box p {
+  color: var(--white-color);
+  text-align: left;
+  margin-left: 3rem;
+}
+.dowload-page-btn {
+  background-color: var(--brown-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 2rem 4rem;
+}
+.count {
+  margin-left: -1rem;
+}
+
+.download-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .sug-download {
+  display: grid;
+  grid: ;
+} */
+
+.user-com-img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.comment-input {
+  width: 60%;
+  height: 20vh;
+  border: 1px solid;
+  margin: 2rem 0;
+}
+
+.comment form {
+  margin-left: 3rem;
+}
+
+.user-com-img img {
+  width: 5%;
+}
+.userimg img {
+  width: 50%;
+}
+
+.pre-gri {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+}
+
+.pre-photo img {
+  width: 50%;
+}
+
+.pre-info span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.reply {
+  display: flex;
+  gap: 2rem;
+}
+.pre-info a {
+  color: var(--darck-blue);
+}
+
+.pre-info i {
+  margin-left: 0.5rem;
+  color: var(--darck-blue);
+}
+
+@media screen and (max-width: 992px) {
+  .download-icon {
+  }
+  .dowload-page-btn {
+    background-color: var(--brown-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 1rem 1rem;
+    margin-top: 2rem;
+    font-size: 5px;
+  }
+  .dowload-page-btn a {
+    font-size: 10px;
+  }
+  .count {
+    font-size: 10px;
+    margin-left: 0.1rem;
+  }
+  .comment-input {
+    width: 10em;
+    height: 20vh;
+    border: 1px solid;
+    margin: 2rem 0;
+  }
+  .download {
+    padding: 0 3rem;
+  }
+  .firebase-sec textarea {
+    font-size: 0.5rem;
+  }
+  .code-snippet-area {
+    font-size: 0.5rem;
+  }
 }
