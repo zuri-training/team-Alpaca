@@ -2,7 +2,11 @@ const likeBtn = document.querySelectorAll(".fa-thumbs-up");
 const download = document.querySelectorAll(".fa-cloud");
 const footerDate = document.getElementById("curent-date");
 const selectCourse = document.querySelectorAll("#view-course");
+const navLink = document.querySelector(".nav-list");
 let numLikes = document.querySelectorAll("#num-likes");
+const navBar = document.querySelector(".menu-bar");
+const header = document.querySelector(".header");
+const navCancle = document.querySelector(".fa-times");
 let colorInterTurn = true;
 let addNum = 0;
 let interactColor;
@@ -21,7 +25,7 @@ footerDate.textContent = currentdate;
 
 ///////////////////////////////  like bnt
 
-likeBtn.forEach((like) => {
+likeBtn.forEach((like, likeI) => {
   like.addEventListener("click", (e) => {
     e.preventDefault();
     const clickbtn = e.target;
@@ -85,4 +89,17 @@ selectCourse.forEach((view, viewI) => {
     } else {
     }
   });
+});
+
+navBar.addEventListener("click", function () {
+  navLink.style.display = "block";
+  navLink.classList.add("header-show");
+  navCancle.classList.add("fa-times-show");
+  // header.classList.add("header-show");
+});
+navCancle.addEventListener("click", function () {
+  navLink.style.display = "none";
+  navLink.classList.remove("header-show");
+  navCancle.classList.remove("fa-times-show");
+  // header.classList.add("header-show");
 });

@@ -1,4 +1,6 @@
-* {
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,8 +13,10 @@
   --light-brown-color: rgb(207, 169, 109);
   --black-color: rgb(37, 37, 44);
   --gray-color: rgba(33, 27, 74, 0.769);
-  --darck-blue: #161F77;
+  --darck-blue: #161f77;
   --blue: #1d299e;
+  --colrh-visit: #959ef6;
+  --question-back: #dceafe;
   --gray-color-2: rgba(223, 223, 223, 0.344);
 }
 
@@ -44,6 +48,7 @@ a {
   border-radius: 5px;
   outline: none;
   color: var(--white-color);
+  margin-bottom: 2rem;
 }
 
 ul li {
@@ -59,18 +64,27 @@ p,
 a {
   margin: 1rem 0;
 }
+
 img {
-  width: 100%;
+  /* display: block; */
+  max-width: 100%;
 }
 
 .section {
-  padding: 3rem 0;
+  padding: 3rem 0rem;
 }
 .section-center {
   width: 90vw;
   margin: 0 auto;
-  max-width: 1120px;
+  max-width: 1170px;
 }
+
+@media screen and (max-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
 p {
   color: var(--gray-color);
 }
@@ -89,7 +103,7 @@ header
 ===============
 */
 
-header {
+.header {
   padding: 5rem;
   display: flex;
   flex-direction: row;
@@ -98,6 +112,7 @@ header {
   place-items: cen;
   margin: 0 3rem;
 }
+
 .header-logo {
   display: flex;
   flex-direction: row;
@@ -108,7 +123,9 @@ header {
 .logo {
   width: 40px;
 }
-
+.menu-bar i {
+  display: none;
+}
 .header-logo h1 {
   font-size: 20px;
 
@@ -139,6 +156,95 @@ header nav ul a {
 #active a {
   color: var(--white-color);
 }
+.fa-times {
+  display: none;
+  margin-left: -2rem;
+}
+@media screen and (max-width: 980px) {
+  .fa-times {
+    display: block;
+    font-size: 2rem;
+    color: var(--brown-color-2);
+    position: relative;
+    z-index: 1000;
+    top: 0%;
+    left: -10%;
+    transform: translate(-50%, -200%);
+    margin-left: 0rem;
+  }
+  .fa-times-show {
+    left: 55%;
+  }
+  .header-logo h1 {
+    font-size: 16px;
+  }
+  .header {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    z-index: 1000;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    padding: 1rem 5rem;
+  }
+  .menu-bar i {
+    display: block;
+    color: var(--black-color);
+    font-size: 2.3rem;
+    margin-right: -6rem;
+    width: 10px;
+    transition: ease-in 0.5s;
+  }
+  .nav-list {
+    display: none;
+  }
+  .header nav ul {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    background-color: var(--colrh-visit);
+    padding: 80px 50px;
+    height: 100vh;
+  }
+  .header-logo {
+    margin-left: -3rem;
+  }
+  .header-show {
+    display: block;
+    width: 300px;
+
+    /* width: 100%;
+    height: 100vh; */
+  }
+  .header-logo {
+    display: block;
+  }
+
+  .header nav ul li {
+    width: 300px;
+    margin-bottom: 6rem;
+    z-index: 1000;
+  }
+  .header nav ul li a {
+    color: white;
+  }
+  .header nav ul li a:hover {
+    color: var(--brown-color);
+    transition: ease-in-out 0.5s;
+    font-size: 1.3rem;
+  }
+
+  #active {
+    background-color: transparent;
+    padding: 0;
+    color: var(--brown-color);
+  }
+
+  header nav ul li {
+    margin-left: 0;
+  }
+}
 
 /* 
 ===============
@@ -158,7 +264,7 @@ banner
   text-align: left;
 }
 .banner .banners .banner-info h1 {
-  font-size: 64px;
+  font-size: 4rem;
   font-weight: 400;
   line-height: 1.3;
   margin-bottom: 2rem;
@@ -172,6 +278,21 @@ banner
   display: block;
 
   border-radius: 4px;
+}
+
+@media screen and (max-width: 992px) {
+  .banner .banners {
+    display: block;
+  }
+  .btn {
+    margin-bottom: 2rem;
+  }
+  .banner .banners .banner-info h1 {
+    font-size: 3.4rem;
+  }
+  .banner .banners .banner-info p {
+    font-size: 1.5rem;
+  }
 }
 
 /* 
@@ -218,6 +339,17 @@ works
   color: var(--black-color);
 }
 
+@media screen and (max-width: 992px) {
+  .work .works {
+    display: block;
+  }
+  .work .works .icons span a img {
+    width: 3.3rem;
+  }
+  .work p {
+    margin-bottom: 1.6rem;
+  }
+}
 /* 
 ===============
 course
@@ -301,6 +433,29 @@ course
   text-align: center;
   margin: 0 2px;
 }
+@media screen and (max-width: 992px) {
+  .course .courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .course .courses p {
+    padding-top: 0.4rem;
+    font-size: 12px;
+  }
+  .course .courses .course-info {
+    display: block;
+    position: relative;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--gray-color-2);
+    margin-top: 3.3rem;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+}
 /* 
 ===============
 community
@@ -355,7 +510,7 @@ footer
   margin-bottom: 1rem;
 }
 .footer-list ul li a {
-  color:var(--white-color));
+  color: var(--white-color);
 }
 
 .footer .footer-sec p {
@@ -401,6 +556,39 @@ footer
 }
 .footer-line p {
   color: var(--white-color);
+}
+
+@media screen and (max-width: 992px) {
+  .footer .footer-sec {
+    display: block;
+  }
+  .footer-list ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    gap: 0;
+  }
+  .footer-list ul li a {
+    font-size: 1rem;
+  }
+  .footer-list ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-txt {
+    justify-content: flex-start;
+  }
+  .privacy {
+    display: block;
+
+    gap: 0;
+  }
+  .footer-line {
+    display: block;
+    text-align: center;
+  }
 }
 /* 
 ===============
@@ -506,4 +694,412 @@ login page
 
 .email-msg {
   padding-bottom: 2rem;
+}
+
+/* 
+===============
+about page
+===============
+*/
+
+.about-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.mg-about-head {
+  position: relative;
+}
+
+.aboutheader-img-1 {
+  position: absolute;
+  right: 50%;
+  bottom: 60%;
+  transform: translate(50%, -50%);
+  width: 12%;
+}
+.aboutheader-img-2 {
+  position: absolute;
+  right: 50%;
+  bottom: 61%;
+  transform: translate(50%, -50%);
+  width: 11%;
+}
+.aboutheader-img-3 {
+  position: absolute;
+  right: 50%;
+  bottom: 64%;
+  transform: translate(50%, -50%);
+  width: 9%;
+}
+
+.abouts-banner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  margin-bottom: 3rem;
+}
+.abouts-banner .about-info h2 {
+  color: var(--black-color);
+
+  font-size: 2rem;
+  font-weight: 500;
+}
+.abouts-banner .about-info p {
+  color: var(--black-color);
+
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 1.6px;
+}
+.abouts-banner .about-banner-photo .about-banner-img {
+  position: relative;
+}
+
+.about-banner-img1 {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  width: 77%;
+}
+
+.about-banner-img2 {
+  position: absolute;
+  right: 30%;
+  bottom: 190%;
+  transform: translate(50%, 50%);
+  width: 35%;
+}
+.about-banner-img3 {
+  position: relative;
+  right: -17%;
+  bottom: 0%;
+  transform: translate(50%, -140%);
+  width: 20%;
+}
+.about-banner-img4 {
+  position: absolute;
+  right: 77%;
+  bottom: 20%;
+  transform: translate(50%, 50%);
+  width: 33%;
+}
+.about-banner-img5 {
+  position: absolute;
+  right: 35%;
+  bottom: 0%;
+  transform: translate(50%, 50%);
+  width: 39%;
+}
+.what-wedo-sec {
+  background-color: #cb9a6b;
+}
+
+.what-wedo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+}
+
+.we-do-img1 {
+  width: 20%;
+  margin-top: -8rem;
+}
+
+.we-do-img2 {
+  width: 80%;
+}
+.what-wedo h2 {
+  color: var(--white-color);
+  font-size: 2rem;
+  font-weight: 500;
+}
+.what-wedo p {
+  color: var(--white-color);
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 1.6px;
+}
+.what-wedo img {
+  margin-left: 4rem;
+}
+
+.wedo-1 {
+  background-color: #cb9a6b;
+  margin-top: 1rem;
+}
+/* why  */
+.why {
+  background-color: var(--white-color);
+}
+
+.why-we-do {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+}
+.why-we-do h2 {
+  color: var(--brown-color);
+  font-size: 2rem;
+  text-align: right;
+  margin-right: 17rem;
+}
+.why-we-do p {
+  color: var(--black-color);
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-right: 5rem;
+}
+.why-we-do img {
+  width: 70%;
+  margin-left: 4rem;
+}
+.black {
+  color: var(--black-color);
+}
+
+.visit {
+  background: var(--darck-blue);
+}
+
+.visit-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.visit h2 {
+  color: var(--colrh-visit);
+  text-align: center;
+}
+
+.visit span {
+  color: var(--white-color);
+  margin-bottom: 2rem;
+}
+.visit span img {
+  width: 7%;
+  margin-right: 1rem;
+}
+
+.team {
+  margin-top: -4rem;
+}
+.team .team-page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.team-page .team-photo .individual-img img {
+  display: block;
+  width: 57%;
+  height: 25vh;
+  object-fit: cover;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.team-page article h2 {
+  color: var(--black-color);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.team-page article h4 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.team-page article p {
+  font-size: 12px;
+  width: 70%;
+  margin-bottom: 1rem;
+}
+
+.team-link {
+  width: 7%;
+
+  margin-bottom: 1rem;
+}
+
+.quetions {
+  background-color: var(--question-back);
+}
+.quetions .ask-question h2,
+h3 {
+  text-align: center;
+  font-weight: 400;
+}
+.quetions .ask-question h2 {
+  font-size: 2rem;
+  color: var(--brown-color);
+}
+.quetions .ask-question h3 {
+  font-size: 1.7rem;
+  color: var(--black-color);
+  margin-bottom: 1.6rem;
+}
+
+.about-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+.img-about-team {
+  position: relative;
+  right: 50%;
+  bottom: 50%;
+}
+
+.about-team-img-1 {
+  position: relative;
+  right: -100%;
+  bottom: -80%;
+
+  width: 12%;
+}
+.about-team-img-2 {
+  position: absolute;
+  right: -11.5%;
+  bottom: -67%;
+
+  width: 11%;
+}
+.about-team-img-3 {
+  position: absolute;
+  right: -10.5%;
+  bottom: -60%;
+
+  width: 9%;
+}
+@media screen and (max-width: 992px) {
+  .abouts-banner {
+    display: block;
+
+    margin-bottom: 3rem;
+  }
+  .what-wedo {
+    display: block;
+  }
+  .why-we-do {
+    display: block;
+  }
+  .team .team-page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-we-do p {
+    margin-left: 4rem;
+  }
+  .what-wedo p {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .why-we-do h2 {
+    margin-right: 8rem;
+    margin-left: 4rem;
+  }
+  .what-wedo h2 {
+    margin-left: 4rem;
+  }
+  .abouts-banner .about-info h2 {
+    color: var(--black-color);
+    margin-left: 4rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .abouts-banner .about-info p {
+    margin-left: 4rem;
+    margin-bottom: 6rem;
+  }
+  .abouts-banner .about-banner-photo .about-banner-img {
+    position: relative;
+  }
+
+  .about-banner-img1 {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    width: 40%;
+  }
+
+  .about-banner-img2 {
+    position: absolute;
+    right: 40%;
+    bottom: 140%;
+    transform: translate(50%, 50%);
+    width: 20%;
+  }
+  .about-banner-img3 {
+    position: relative;
+    right: -27%;
+    bottom: 0%;
+    transform: translate(50%, -110%);
+    width: 13%;
+  }
+  .about-banner-img4 {
+    position: absolute;
+    right: 67%;
+    bottom: 30%;
+    transform: translate(50%, 50%);
+    width: 17%;
+  }
+  .about-banner-img5 {
+    position: absolute;
+    right: 35%;
+    bottom: 0%;
+    transform: translate(10%, 50%);
+    width: 19%;
+  }
+
+  .mg-about-head {
+    position: relative;
+  }
+
+  .aboutheader-img-1 {
+    position: absolute;
+    right: 50%;
+    bottom: 84.5%;
+    transform: translate(50%, -50%);
+    width: 12%;
+  }
+  .aboutheader-img-2 {
+    position: absolute;
+    right: 50%;
+    bottom: 85%;
+    transform: translate(50%, -50%);
+    width: 11%;
+  }
+  .aboutheader-img-3 {
+    position: absolute;
+    right: 50%;
+    bottom: 86%;
+    transform: translate(50%, -50%);
+    width: 9%;
+  }
+
+  .about-sec {
+    margin-top: -18rem;
+  }
+}
+.about {
+  padding-left: 5rem;
 }
