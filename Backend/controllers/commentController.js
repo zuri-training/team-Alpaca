@@ -24,29 +24,29 @@ exports.getAllComments = async (req, res) => {
   }
 };
 
-// get single comment
-exports.getTask = async (req, res) => {
-  try {
-    let id = { _id: req.params.id };
-    let comment = await Comment.findOne({ _id: id });
-    if (!task)
-      return res.status(404).json({
-        success: false,
-        message: "Comment not found",
-      });
-    res.status(200).json({
-      success: true,
-      message: "Comment found",
-      comment,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Internal Server Error",
-      error: error.message,
-    });
-  }
-};
+// // get single comment
+// exports.getTask = async (req, res) => {
+//   try {
+//     let id = { _id: req.params.id };
+//     let comment = await Comment.findOne({ _id: id });
+//     if (!task)
+//       return res.status(404).json({
+//         success: false,
+//         message: "Comment not found",
+//       });
+//     res.status(200).json({
+//       success: true,
+//       message: "Comment found",
+//       comment,
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       success: false,
+//       message: "Internal Server Error",
+//       error: error.message,
+//     });
+//   }
+// };
 
 // Create comment
 exports.createComment = async (req, res) => {
@@ -56,7 +56,7 @@ exports.createComment = async (req, res) => {
     if (!created)
       return res.status(400).json({
         success: false,
-        message: "Comment created failed",
+        message: "Comment creation failed",
       });
     return res.status(200).json({
       success: true,
@@ -76,7 +76,7 @@ exports.updateComment = async (req, res) => {
   try {
     let id = { _id: req.params.id };
     let comment = await req.body;
-    let updated = await comment.findOneAndUpdate(id, comment, { new: true });
+    let updated = await Comment.findOneAndUpdate(id, comment, { new: true });
 
     if (!updated)
       return res.status(400).json({
@@ -110,7 +110,7 @@ exports.deleteComment = async (req, res) => {
       });
     return res.status(200).json({
       success: true,
-      message: "User deleted successfully",
+      message: "Comment deleted successfully",
     });
   } catch (error) {
     res.status(500).json({
