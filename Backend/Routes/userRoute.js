@@ -22,7 +22,6 @@ router.post('/login', [
 router.get('/register/:code', verifyAccount);
 // router.get('/me', getAllUsers);
 router.get('/me', authenticate , getUser)
-router.post('/forgotpassword', forgotPassword);
 
 
 module.exports = router;
