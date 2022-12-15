@@ -50,6 +50,7 @@ a {
   outline: none;
   color: var(--white-color);
   margin-bottom: 2rem;
+  cursor: pointer;
 }
 
 ul li {
@@ -451,13 +452,33 @@ course
   .course .courses .course-info {
     display: block;
     position: relative;
-    top: 36%;
+    top: 31%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--gray-color-2);
     margin-top: 3.3rem;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+  }
+  .course .courses .select-course img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    text-align: center;
+    line-height: 300px;
+  }
+  .select-course {
+    box-shadow: 3px 3px 20px var(--gray-color-2),
+      3px 3px 20px var(--gray-color-2), 4px 4px 10px var(--gray-color-2),
+      4px 4px 10px var(--gray-color-2);
+    width: 70%;
+    margin-bottom: 4rem;
+    border-radius: 3px;
+    width: 70%;
+    height: 22vh;
   }
 }
 /* 
@@ -705,7 +726,10 @@ login page
 about page
 ===============
 */
-
+.team-member-name {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
 .about-head {
   display: flex;
   flex-direction: column;
@@ -1008,6 +1032,22 @@ h3 {
   }
   .team .team-page {
     grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    place-items: center;
+    gap: 0 4rem;
+  }
+  .about h2 {
+    color: white;
+  }
+  .team-page .team-photo .individual-img img {
+    width: 77%;
+    height: 25vh;
+    object-fit: cover;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .team-member-name {
   }
   .why-we-do p {
     margin-left: 4rem;
@@ -1017,7 +1057,7 @@ h3 {
     margin-right: 4rem;
   }
   .why-we-do h2 {
-    margin-right: 8rem;
+    margin-right: 8re m;
     margin-left: 4rem;
   }
   .what-wedo h2 {
@@ -1099,13 +1139,13 @@ h3 {
     transform: translate(50%, -50%);
     width: 9%;
   }
+  .team-member-name {
+    font-size: 15px;
+  }
 
   .about-sec {
     margin-top: -18rem;
   }
-}
-.about {
-  padding-left: 5rem;
 }
 
 /* 
@@ -1193,11 +1233,6 @@ download page
   align-items: center;
 }
 
-/* .sug-download {
-  display: grid;
-  grid: ;
-} */
-
 .user-com-img {
   display: flex;
   flex-direction: row;
@@ -1258,7 +1293,9 @@ download page
 }
 
 @media screen and (max-width: 992px) {
-  .download-icon {
+  .api-key-box p {
+    font-size: 0.6rem;
+    margin-left: 5px;
   }
   .dowload-page-btn {
     background-color: var(--brown-color);
@@ -1269,21 +1306,32 @@ download page
     margin-top: 2rem;
     font-size: 5px;
   }
+  .download-icon {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -2rem;
+  }
+
   .dowload-page-btn a {
     font-size: 10px;
   }
+  .btn-comen {
+    margin-right: 6rem;
+  }
   .count {
     font-size: 10px;
-    margin-left: 0.1rem;
+    text-align: center;
   }
+
   .comment-input {
-    width: 10em;
+    width: 20em;
     height: 20vh;
     border: 1px solid;
     margin: 2rem 0;
   }
   .download {
-    padding: 0 3rem;
+    padding: 0.5rem;
   }
   .firebase-sec textarea {
     font-size: 0.5rem;
