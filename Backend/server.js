@@ -6,6 +6,7 @@ const cors = require("cors");
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const morgan = require('morgan');
+require('dotenv').config();
 
 //import express session
 const session = require("express-session");
@@ -15,6 +16,7 @@ const commentRoute = require("./Routes/commentRoute");
 
 const templateRoute = require("./Routes/templateRoutes");
 const passwordResetRouter = require("./Routes/passwordResetRoute");
+const routes = require('./Routes/userRoute');
 
 connect();
 
@@ -22,8 +24,23 @@ const PORT = process.env.PORT || 3100;
 
 const app = express();
 app.use(morgan('dev'))
-app.use(cors);
 app.use(json());
+app.use(express.json());
+app.use(cors());
+
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+    );
+    next();
+  });
+app.use('/api/user', routes);
 app.use("/comments", commentRoute);
 
 app.use("/templates", templateRoute);
