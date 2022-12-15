@@ -175,62 +175,9 @@ const getUser = asyncHandler(async (req, res) => {
     }
 });
 
-
-/**
- * @desc Forgot Password
- * @route POST
- * @route /api/user/forgotpassword
- * @access Public
- */
-
-
-const forgotPassword = asyncHandler(async (req, res) => {
-	const user = await User.findOne({ email: req.body.email });
-
-	if (!user) {
-		res.status(404);
-		throw new Error('There is no user with that email');
-	}
-
-	// Get reset token
-	const resetToken = user.getResetPasswordToken();
-
-	await user.save({ validateBeforeSave: false });
-
-	// create message to pass
-	const text = `<h1>Password Reset Link</h1>
-        <h2>Hello ${user.firstName}</h2>
-        <p>You are receiving this email because you (or someone else) has
-         requested the reset of a password. If you think this was done by mistake, ignore the mail or reset your password</p>
-           <a href='http://localhost:5000/api/user/resetpassword/${resetToken}'> Click here to reset your password</a>
-        </div>`;
-
-	try {
-		await sendEmail({
-			email: user.email,
-			subject: 'Password reset token',
-			message: text,
-		});
-
-		res.status(200).json({
-			success: true,
-			message: 'Email sent',
-		});
-	} catch (error) {
-		user.resetPasswordToken = undefined;
-		user.resetPasswordExpire = undefined;
-
-		await user.save({ validateBeforeSave: false });
-
-		res.status(500);
-		throw new Error('Email could not be sent');
-	}
-});
-
 module.exports = {
     registerUser,
     verifyAccount,
     loginUser,
     getUser,
-    forgotPassword
 }
