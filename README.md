@@ -68,6 +68,11 @@ Reaction
 Authenticated user should be able to react (like or dislike) to auth codes documentation
 Remove reaction
 
+
+## The project can be found live here https://alpacaauthwiki.netlify.app/ (Kindly note that the project is still undergoing developments as some functions might not work at the moment)
+
+
+
 ## TEAM OVERVIEW
 Role And Responsibility of Members Our team is divided into three groups:
 
