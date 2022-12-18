@@ -33,21 +33,20 @@ header{
     position:fixed;
     top:200px;
     left:121px;
-    height: 276px;
-    width: 224px;
+    height: 280px;
+    width: 240px;
     border-radius: 8px;
     background: hsl(29, 48%, 61%);
-    padding: 16px;
+    padding: 10px;
     overflow-y:auto;
     overflow-x:hidden;
-    font-weight: 700;
 }
 
 
 #navbar li{
     color:white;
     list-style:none;
-    font-size:12px;
+    font-size:14px;
     position:relative;
 }
 
@@ -112,9 +111,10 @@ code{
     margin-top: 60px;
     padding-top:40px;
     padding-bottom: 20px;
+    padding-right:20px;
     background-color: #1D299E;
     color:#FFFFFF;
-    font-size: 12px;
+    font-size: 14px;
     
 }
 
@@ -130,8 +130,8 @@ code{
 
 #footer #bottom{
     display:flex;
-    flex-wrap: wrap;
-    justify-content:space-evenly;
+    flex-direction: column;
+    align-items: center;
     border-top: 1px solid white;
 }
 
@@ -139,11 +139,10 @@ code{
     display: block;
     float: left;
     padding-right: 20px;
-
 }
 
 #footer #bottom p{
-    padding-right: 20px;
+    padding-top: 0px;
 }
 
 
