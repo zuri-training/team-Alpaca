@@ -8,7 +8,7 @@
 
 h1{
     text-align: center;
-    color:blue;
+    color:#0000ff;
 }
 
 a {
@@ -17,8 +17,32 @@ a {
     cursor: pointer;
 }
 
-/************* NAVIGATION BAR***************/
+.btn{
+    background-color:#CB9A6B;
+    color: #fff;
+    border: none;
+    padding:10px;
+}
 
+.btn-more:hover{
+    cursor: pointer;
+}
+
+#search-bar{
+    background-image: url('images/magnifying-glass.png');
+    background-position:10px 5px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: auto;
+    width:50%;
+    padding:12px 20px 12px 40px;
+    font-size:16px;
+    border: 1px solid #ddd;
+    border-radius:10px; 
+}
+
+
+/************* NAVIGATION BAR***************/
 nav .container {
     padding: 60px 120px 60px 120px;
     display: flex;
@@ -29,8 +53,8 @@ nav .container {
     display: flex;
     margin-left: auto;
     height: 100%;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .links {
@@ -47,7 +71,6 @@ nav .container {
 .logo {
     width: 40px;
     height: 40px;
-
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -77,39 +100,39 @@ nav {
 nav button {
     display: none;
 }
-
 /************* NAVIGATION BAR ENDS ***************/
 
-/************* LIBRARY BEGINS HERE ***************/
 
+/************* LIBRARY BEGINS HERE ***************/
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
+    justify-items: center;
     padding: 100px;
 }
 
 .grid-item {
-    width:237px;
-    height:231.87px;
-    color:white;
+    width:222px;
+    height:216.87px;
+    color:#ffffff;
     border-radius: 16px;
     padding: 32px;
-    font-size: 24px;
-    text-align: center;
-    margin: 12px;
+    font-size: 20px;
+    margin-bottom: 50px;
 
 }
 
 .grid-item:hover{
-    background-color: #FBFBFB;
-    color:black;
+    background-color: #f5f5f5;
+    color:#000000;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .green{
     background-color:green
 }
 .blue{
-    background-color: blue;
+    background-color: #0000ff;
 }
 .brown{
     background-color: brown;
@@ -130,27 +153,24 @@ nav button {
 }
 
 
-#btn-more{
+.btn-more {
     position:relative;
     left:42.5%;
     margin-top:-50px;
     margin-bottom:100px;
     background-color: #CB9A6B;
-    color:white;
+    color:#ffffff;
     border: none;
     padding:10px 20px 10px 20px;
 }
 
-#btn-more:hover{
-    cursor: pointer;
+.btn-more a{
+    color:#fff;
 }
- 
-
 /************* LIBRARY ENDS HERE ***************/
   
 
 /*** FOOTER BEGINS *******/
-
 footer {
     background: rgba(22, 31, 119, 1);
     color: #fff;
@@ -186,15 +206,16 @@ footer .container {
     padding-bottom: 20px;
 }
 
-.btn{
-    background-color:#CB9A6B;
-    color:white;
-    border: none;
-    padding:10px;
+.banner .logo_text{
+    color:#fff;
 }
 
 .btn:hover{
     cursor: pointer;
+}
+
+.newsletter p {
+    padding-bottom: 20px;
 }
 
 input {
@@ -210,7 +231,6 @@ input[type='email'] {
     padding-left: 15px;
 }
 
-
 .bottom {
     display: flex;
     align-items: center;
@@ -220,19 +240,16 @@ input[type='email'] {
 .bottom-links ul li{
     display: block;
     float:left;
-    padding-right: 30px;
+    padding-right: 20px;
 }
 
 .copyright{
-    padding-top: 30px;
+    padding-top: 20px;
 }
-
-
 /********** FOOTER ENDS ************/
 
+
 /********** MEDIA RESPONSIVENESS ************/
-
-
 @media (max-width: 920px) {
 
     /* ============ Nav bar =============== */
@@ -309,59 +326,30 @@ input[type='email'] {
         background: #CB9A6B;
         color: #fff;
     }
-
     /* ============ End nav bar ============ */
 
-    main .container {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-
-    .actions .container h2 {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-
-    .icons {
-        flex-basis: 50%;
-    }
-
-    .reasons .container h3 {
-        margin: auto;
-    }
-
-    
     /* ============== Grid ========== */
-
     .grid-container {
         display: grid;
         grid-template-columns: auto auto;
-        justify-content: center;
         padding: 10px;
     }
     
     .grid-item {
         padding: 20px;
         font-size: 20px;
-        margin: 32px;
+        
     }
 
-    #btn-more{
+    .btn-more{
         margin-top: 50px;
     }
       
-    /* ============== Footer ========== */
 
+    /* ============== Footer ========== */
     .top {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    .newsletter p {
-        padding-bottom: 20px;
-
     }
 
     .banner {
@@ -388,6 +376,11 @@ input[type='email'] {
         margin: 12px;
     }
 
+    .bottom{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
 }
 
 @media (max-width: 576px) {
@@ -400,42 +393,37 @@ input[type='email'] {
         font-size: 20px;
     }
 
+    #search-bar{
+        width:80%;
+    }
 
     /* ============== Grid ========== */
-
     .grid-container {
         display: grid;
         grid-template-columns: auto;
-        justify-content: center;
+        align-items: center;
         padding: 10px;
     }
     
     .grid-item {
+        width:80%;
         font-size: 18px;
         text-align: center;
-        margin: 32px;
     }
 
-    /* ============== Footer ========== */
 
+    /* ============== Footer ========== */
     footer .container {
         padding: 30px 0px 0px 30px;
     }
     
-
     .top {
         display:flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0;
     }
 
     .banner {
         justify-content: flex-start;
-    }
-
-    .bottom{
-        display: flex;
-        flex-direction: column;
     }
 }
