@@ -70,7 +70,7 @@ Remove reaction
 
 
 ## The project can be found live here https://alpacaauthwiki.netlify.app/ (Kindly note that the project is still undergoing developments as some functions might not work at the moment)
-
+## Here's link to the Backend hosting: https://alpacaauthwiki.onrender.com/
 
 
 ## TEAM OVERVIEW
