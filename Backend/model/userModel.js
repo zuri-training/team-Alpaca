@@ -1,38 +1,21 @@
-//import mongoose
-const mongoose = require('mongoose')
-//import crypto
-const crypto = require('crypto')
-
-//create schema
-const userSchema = new mongoose.Schema({
-    username : {
-        type: String,
-        required: true
+const {Schema, model} =  require('mongoose')
+const passportLocalMongoose = require('passport-local-mongoose');
+const newSchema = new Schema({
+    username: {
+       type: String,
+       require : true
     },
-    email : {
-        type: String,
-        required: true
-    },
-    password : {
-        type: String,
-        required: true
-    }
-})
+    fullname: {type: String,
+      require: true
+   },
+   email: {
+      type: String,
+      require: true
+   }
+},
+{timestamps: true})
+newSchema.plugin(passportLocalMongoose);
 
-//generate password reset hash
-userSchema.methods.passwordResetHash = function(){
-    //create hash object, then create a sha512 hash of the user's current password 
-    //and return hash
-    const resetHash = crypto.createHash('sha512').update(this.password).digest('hex')
-    return resetHash;
-}
+const todoModel = model('user', newSchema);
 
-//verify password reset hash
-userSchema.methods.verifyPasswordResetHash = function(resetHash = undefined){
-    //regenerate hash and check if they are equal
-    return this.passwordResetHash() === resetHash;
-}
-
-// model
-const User = mongoose.model('User', userSchema)
-module.exports = User;
+module.exports = todoModel
